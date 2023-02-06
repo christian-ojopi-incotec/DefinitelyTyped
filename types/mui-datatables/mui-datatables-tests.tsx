@@ -39,7 +39,9 @@ const MuiCustomTable: React.FC<Props> = props => {
                     console.log(tableMeta);
                     console.log(tableMeta.currentTableData);
                     console.log(tableMeta.currentTableData[0]);
+                    // $ExpectType number
                     console.log(tableMeta.currentTableData[0].dataIndex);
+                    // $ExpectType number
                     console.log(tableMeta.currentTableData[0].rowIndex);
 
                     return (
