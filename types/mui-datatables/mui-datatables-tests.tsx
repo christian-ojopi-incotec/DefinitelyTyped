@@ -36,6 +36,12 @@ const MuiCustomTable: React.FC<Props> = props => {
                     return (val1.data.length - val2.data.length) * (order === 'asc' ? 1 : -1);
                 },
                 customBodyRender: (value, tableMeta, updateValue) => {
+                    console.log(tableMeta);
+                    console.log(tableMeta.currentTableData);
+                    console.log(tableMeta.currentTableData[0]);
+                    console.log(tableMeta.currentTableData[0].dataIndex);
+                    console.log(tableMeta.currentTableData[0].rowIndex);
+
                     return (
                         <input
                             type="text"
@@ -188,7 +194,7 @@ const MuiCustomTable: React.FC<Props> = props => {
                 deleteAria: 'Delete Selected Rows',
             },
         },
-        storageKey: 'SavedToLocalStorage'
+        storageKey: 'SavedToLocalStorage',
     };
 
     return (
@@ -273,12 +279,12 @@ const MuiTheme = createTheme({
                 root: {
                     fontWeight: 300,
                 },
-            }
+            },
         },
         MUIDataTableBody: {
             styleOverrides: {
                 emptyTitle: {},
-            }
+            },
         },
     },
 } as unknown as ThemeOptions);
