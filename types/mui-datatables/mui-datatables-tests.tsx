@@ -36,13 +36,20 @@ const MuiCustomTable: React.FC<Props> = props => {
                     return (val1.data.length - val2.data.length) * (order === 'asc' ? 1 : -1);
                 },
                 customBodyRender: (value, tableMeta, updateValue) => {
-                    console.log(tableMeta);
-                    console.log(tableMeta.currentTableData);
-                    console.log(tableMeta.currentTableData[0]);
                     // $ExpectType number
-                    console.log(tableMeta.currentTableData[0].dataIndex);
+                    tableMeta.rowIndex;
+
+                    // $ExpectType any[]
+                    tableMeta.rowData;
+
                     // $ExpectType number
-                    console.log(tableMeta.currentTableData[0].rowIndex);
+                    tableMeta.columnIndex;
+
+                    // $ExpectType string
+                    tableMeta.currentTableData[tableMeta.rowIndex].index;
+
+                    // $ExpectType any[]
+                    tableMeta.currentTableData[tableMeta.rowIndex].data;
 
                     return (
                         <input
